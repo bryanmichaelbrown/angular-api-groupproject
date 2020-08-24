@@ -9,6 +9,7 @@ import { MovieListComponent } from './movie-list/movie-list.component';
 import { WatchListPageComponent } from './watch-list-page/watch-list-page.component';
 import { CardComponent } from './card/card.component';
 import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HomeComponent } from './home/home.component';
     WatchListPageComponent,
     CardComponent,
     HomeComponent,
+    HeaderComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

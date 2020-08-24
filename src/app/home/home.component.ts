@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  genres: any;
+  genre: any;
   constructor(private service: MovieService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
       let id = params.get('genre');
       this.service.getMovies(id).subscribe((response) => {
         console.log(response.results);
-        this.genres = response.results;
+        this.genre = response.results;
       });
     });
   };

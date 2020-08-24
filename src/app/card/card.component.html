@@ -1,4 +1,7 @@
 <div>
-  <p>hi</p>
-  <!-- <img src="{{ genreRef.poster_path }}" alt="Poster of Movie" /> -->
+  <p>{{ genreRef.title }}</p>
+  <img
+    src="https://www.themoviedb.org/documentation/api{{ genreRef.poster_path }}"
+    alt="Poster of Movie"
+  />
 </div>

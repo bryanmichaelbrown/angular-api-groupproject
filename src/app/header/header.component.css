@@ -1,0 +1,9 @@
+h1 {
+  font-family: "Bangers", cursive;
+  margin: 0;
+}
+.header {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  margin: 0;
+}
