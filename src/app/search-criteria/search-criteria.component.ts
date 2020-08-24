@@ -8,7 +8,18 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./search-criteria.component.css'],
 })
 export class SearchCriteriaComponent implements OnInit {
+  genres: any;
   constructor(private route: ActivatedRoute, private service: MovieService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getGenres();
+  }
+
+  //brings the genres to the search component
+  getGenres = () => {
+    this.service.getGenres().subscribe((response) => {
+      console.log(response.genres);
+      this.genres = response.genres;
+    });
+  };
 }
