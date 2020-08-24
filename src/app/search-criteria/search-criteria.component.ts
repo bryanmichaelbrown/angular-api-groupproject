@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../movie.service';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-search-criteria',
@@ -9,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SearchCriteriaComponent implements OnInit {
   genres: any;
-  constructor(private route: ActivatedRoute, private service: MovieService) {}
+  constructor(private router: Router, private service: MovieService) {}
 
   ngOnInit(): void {
     this.getGenres();
@@ -18,8 +19,18 @@ export class SearchCriteriaComponent implements OnInit {
   //brings the genres to the search component
   getGenres = () => {
     this.service.getGenres().subscribe((response) => {
-      console.log(response.genres);
+      // console.log(response.genres);
       this.genres = response.genres;
+    });
+  };
+
+  search = (form: NgForm) => {
+    console.log('howdy');
+
+    this.router.navigate(['home'], {
+      queryParams: {
+        genre: form.value.genre,
+      },
     });
   };
 }

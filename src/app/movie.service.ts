@@ -30,14 +30,19 @@ export class MovieService {
   };
 
   //calls movies within the genre specified
-  getMovies = (genre: string) => {
-    return (
-      this.http.get(this.discoverUrl),
-      {
-        params: {
-          with_genres: genre,
-        },
-      }
-    );
+
+  // getMovies = (genreId:string): any => {
+  //   return this.http.get(this.discoverUrl), {
+
+  //   }
+  // }
+
+  getMovies = (genreId: string): any => {
+    return this.http.get(this.discoverUrl, {
+      params: {
+        api_key: this.key,
+        with_genres: genreId,
+      },
+    });
   };
 }

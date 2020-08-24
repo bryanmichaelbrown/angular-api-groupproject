@@ -1,4 +1,8 @@
-<app-search-criteria></app-search-criteria>
-<app-card></app-card>
-<app-watch-list-page></app-watch-list-page>
 <header></header>
+
+<app-search-criteria></app-search-criteria>
+<ol>
+  <app-card *ngFor="let genre of genres; index as i" [genreRef]="genres">
+  </app-card>
+</ol>
+<app-watch-list-page></app-watch-list-page>

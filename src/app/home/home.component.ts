@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../movie.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,21 @@ import { MovieService } from '../movie.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+  genres: any;
+  constructor(private service: MovieService, private route: ActivatedRoute) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getMovies();
+  }
+
+  getMovies = (): any => {
+    this.route.queryParamMap.subscribe((params) => {
+      console.log(params.get('genre'));
+      let id = params.get('genre');
+      this.service.getMovies(id).subscribe((response) => {
+        console.log(response.results);
+        this.genres = response.results;
+      });
+    });
+  };
 }

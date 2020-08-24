@@ -1,9 +1,9 @@
-<form #searchForm>
+<form #searchForm="ngForm" (ngSubmit)="search(searchForm)">
   <label for="searchTerm">Title: </label>
   <input type="text" id="searchTerm" name="searchTerm" ngModel />
   <label for="genre">Genre: </label>
-  <select name="genre" id="genre">
-    <option *ngFor="let genre of genres" value="genre.id">{{
+  <select name="genre" id="genre" ngModel>
+    <option *ngFor="let genre of genres" value="{{ genre.id }}">{{
       genre.name
     }}</option>
   </select>
