@@ -1,17 +1,24 @@
 <form class="search-form" #searchForm="ngForm" (ngSubmit)="search(searchForm)">
   <label for="popularity">Popular?</label>
-  <select name="popularity" id="popularity" ngModel>
+  <select class="select" name="popularity" id="popularity" ngModel>
     <option value="yes">Yes</option>
     <option value="no">No</option>
   </select>
   <label for="genre">Genre?</label>
-  <select name="genre" id="genre" ngModel>
+  <select class="select" name="genre" id="genre" ngModel>
     <option *ngFor="let genre of genres" value="{{ genre.id }}">{{
       genre.name
     }}</option>
   </select>
   <label for="year">Year?</label>
-  <input type="text" name="year" id="year" ngModel />
+  <input
+    class="text-box"
+    type="text"
+    name="year"
+    id="year"
+    placeholder="Write a year..."
+    ngModel
+  />
 
-  <button>Search</button>
+  <button class="search-button">Search</button>
 </form>

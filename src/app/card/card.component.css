@@ -1,0 +1,27 @@
+.card {
+  margin: 5px;
+  justify-content: center;
+  text-align: center;
+}
+.top-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-item {
+  padding: 5px;
+}
+
+.save-button {
+  border-radius: 50px;
+  height: 30px;
+  width: 30px;
+  background: black;
+  border: none;
+  color: #db36a4;
+  font-size: 20px;
+}
+
+.save-button:hover {
+  background: white;
+}
