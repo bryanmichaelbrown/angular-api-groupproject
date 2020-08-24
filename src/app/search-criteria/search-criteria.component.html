@@ -1,15 +1,17 @@
-<form #searchForm>
-  <label for="searchTerm">Title: </label>
-  <input type="text" id="searchTerm" name="searchTerm" ngModel />
-  <label for="genre">Genre: </label>
-  <select name="genre" id="genre">
-    <option *ngFor="let genre of genres" value="genre.id">{{
+<form class="search-form" #searchForm="ngForm" (ngSubmit)="search(searchForm)">
+  <label for="popularity">Popular?</label>
+  <select name="popularity" id="popularity" ngModel>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+  <label for="genre">Genre?</label>
+  <select name="genre" id="genre" ngModel>
+    <option *ngFor="let genre of genres" value="{{ genre.id }}">{{
       genre.name
     }}</option>
   </select>
-  <label for="year">Year: </label>
-  <select name="year" id="year">
-    <option>Year</option>
-  </select>
+  <label for="year">Year?</label>
+  <input type="text" name="year" id="year" ngModel />
+
   <button>Search</button>
 </form>

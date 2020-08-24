@@ -1,0 +1,22 @@
+.h1 {
+  font-family: "Bangers", cursive;
+  margin: 0;
+  padding: 10px;
+  font-size: 100px;
+  text-shadow: 2px 2px #db36a4;
+}
+
+.tagline {
+  padding: 10px;
+  color: #f7ff00;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  margin: 0;
+  color: white;
+  align-items: center;
+}

@@ -29,15 +29,13 @@ export class MovieService {
     });
   };
 
-  //calls movies within the genre specified
-  getMovies = (genre: string) => {
-    return (
-      this.http.get(this.discoverUrl),
-      {
-        params: {
-          with_genres: genre,
-        },
-      }
-    );
+  getMovies = (genreId: string, release_year: any): any => {
+    return this.http.get(this.discoverUrl, {
+      params: {
+        api_key: this.key,
+        with_genres: genreId,
+        primary_release_year: release_year,
+      },
+    });
   };
 }

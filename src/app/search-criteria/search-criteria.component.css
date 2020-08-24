@@ -1,0 +1,9 @@
+.search-form {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px;
+  padding: 20px;
+  background: linear-gradient(to right, #f7ff00, #db36a4);
+  border: 2px solid black;
+  font-size: 20px;
+}
