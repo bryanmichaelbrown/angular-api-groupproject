@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 // import { Movie } from '../interfaces/movie';
 
 @Component({
@@ -7,13 +7,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./watch-list-page.component.css'],
 })
 export class WatchListPageComponent implements OnInit {
-  // watchlist: Movie[] = [];
-
+  @Input() favRef: any;
   constructor() {}
-
-  // onAdd = (movie: Movie) => {
-  //   this.watchlist.unshift(movie);
-  // };
 
   ngOnInit(): void {}
 }

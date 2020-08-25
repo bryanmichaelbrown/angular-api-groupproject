@@ -10,10 +10,12 @@ import { Movie } from '../interfaces/movie';
 })
 export class HomeComponent implements OnInit {
   movies: any;
+  watchlist: any = [];
   constructor(private service: MovieService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.getMovies();
+    this.watchlist = this.service.myFavorites();
   }
 
   getMovies = (): any => {
