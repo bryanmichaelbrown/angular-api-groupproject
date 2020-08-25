@@ -8,4 +8,8 @@
   >
   </app-card>
 </ol>
-<app-watch-list-page></app-watch-list-page>
+
+<app-watch-list-page
+  *ngFor="let fav of watchlist"
+  [favRef]="fav"
+></app-watch-list-page>

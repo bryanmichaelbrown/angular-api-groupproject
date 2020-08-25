@@ -59,6 +59,10 @@ export class MovieService {
     this.watchlist.unshift(index);
     console.log(this.watchlist);
   };
+
+  myFavorites = () => {
+    return this.watchlist;
+  };
 }
 
 //Testing
