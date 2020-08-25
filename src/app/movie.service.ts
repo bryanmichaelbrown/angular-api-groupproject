@@ -10,6 +10,8 @@ export class MovieService {
   genresUrl: string = 'https://api.themoviedb.org/3/genre/movie/list';
   key: string = 'e28cfe982da0910aa5d17ebdd8601688';
   discoverUrl: string = 'https://api.themoviedb.org/3/discover/movie';
+  watchlist: any = [];
+
   constructor(private http: HttpClient) {}
 
   getData = (searchTerm: string): any => {
@@ -48,5 +50,9 @@ export class MovieService {
         sort_by: sort,
       },
     });
+  };
+  onAdd = (index) => {
+    this.watchlist.unshift(index);
+    console.log(this.watchlist);
   };
 }

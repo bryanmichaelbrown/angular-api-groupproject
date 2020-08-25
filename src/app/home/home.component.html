@@ -1,7 +1,11 @@
 <app-header></app-header>
 <app-search-criteria></app-search-criteria>
 <ol class="card-container">
-  <app-card *ngFor="let genre of genre; index as i" [genreRef]="genre">
+  <app-card
+    *ngFor="let movie of movies; index as i"
+    [movieRef]="movie"
+    (addEvent)="onAdd(movie)"
+  >
   </app-card>
 </ol>
 <app-watch-list-page></app-watch-list-page>

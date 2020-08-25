@@ -1,5 +1,5 @@
 .search-form {
-  display: flex;
+  /* display: flex; */
   justify-content: space-around;
   align-items: center;
   margin: 0px;
@@ -51,4 +51,10 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   transition: background-color 5000s;
   -webkit-text-fill-color: #db36a4 !important;
+}
+
+@media screen and (min-width: 768px) {
+  .search-form {
+    display: flex;
+  }
 }

@@ -6,9 +6,9 @@
 
   <label for="genre">Genre?</label>
   <select class="select" name="genre" id="genre" ngModel>
-    <option *ngFor="let genre of genres" value="{{ genre.id }}">{{
-      genre.name
-    }}</option>
+    <option *ngFor="let genre of genres" value="{{ genre.id }}">
+      {{ genre.name }}
+    </option>
   </select>
   <label for="year">Year?</label>
   <input

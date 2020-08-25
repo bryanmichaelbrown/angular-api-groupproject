@@ -15,7 +15,7 @@ export class SearchCriteriaComponent implements OnInit {
 
   ngOnInit(): void {
     this.getGenres();
-    this.getSortTerms();
+    // this.getSortTerms();
   }
 
   //brings the genres to the search component
@@ -26,12 +26,12 @@ export class SearchCriteriaComponent implements OnInit {
     });
   };
 
-  getSortTerms = () => {
-    this.service.getSortTerms().subscribe((response) => {
-      // console.log(response.genres);
-      this.sorts = response.sorts;
-    });
-  };
+  // getSortTerms = () => {
+  //   this.service.getSortTerms().subscribe((response) => {
+  //     // console.log(response.genres);
+  //     this.sorts = response.sorts;
+  //   });
+  // };
 
   search = (form: NgForm) => {
     console.log('howdy');

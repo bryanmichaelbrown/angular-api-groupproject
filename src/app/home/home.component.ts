@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../movie.service';
 import { ActivatedRoute } from '@angular/router';
+import { Movie } from '../interfaces/movie';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  genre: any;
+  movies: any;
   constructor(private service: MovieService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
@@ -23,8 +24,11 @@ export class HomeComponent implements OnInit {
       let sorted = params.get('sort');
       this.service.getMovies(id, year, sorted).subscribe((response) => {
         console.log(response.results);
-        this.genre = response.results;
+        this.movies = response.results;
       });
     });
+  };
+  onAdd = (movie: any) => {
+    this.service.onAdd(movie);
   };
 }
