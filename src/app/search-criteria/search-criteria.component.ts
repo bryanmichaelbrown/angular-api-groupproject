@@ -34,12 +34,12 @@ export class SearchCriteriaComponent implements OnInit {
   // };
 
   search = (form: NgForm) => {
-    console.log('howdy');
+    console.log(form.value);
     this.router.navigate(['home'], {
       queryParams: {
         genre: form.value.genre,
         release_year: form.value.year,
-        sorted: form.value.sort,
+        sort: form.value.sort,
       },
     });
     form.reset;

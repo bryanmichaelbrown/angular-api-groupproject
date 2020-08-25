@@ -42,6 +42,10 @@ export class MovieService {
   };
 
   getMovies = (genreId: string, release_year: string, sort: string): any => {
+    // let sortValue: string;
+    // if (sort === 'pop-desc') {
+    //   sortValue = 'popularity.desc';
+    // }
     return this.http.get(this.discoverUrl, {
       params: {
         api_key: this.key,

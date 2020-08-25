@@ -21,8 +21,8 @@ export class HomeComponent implements OnInit {
       console.log(params.get('genre'));
       let id = params.get('genre');
       let year = params.get('release_year');
-      let sorted = params.get('sort');
-      this.service.getMovies(id, year, sorted).subscribe((response) => {
+      let sort = params.get('sort');
+      this.service.getMovies(id, year, sort).subscribe((response) => {
         console.log(response.results);
         this.movies = response.results;
       });
