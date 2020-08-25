@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Movie } from './interfaces/movie';
+import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 @Injectable({
   providedIn: 'root',
 })
@@ -29,12 +30,22 @@ export class MovieService {
     });
   };
 
-  getMovies = (genreId: string, release_year: any): any => {
+  getSortTerms = (category: any): any => {
+    return this.http.get(this.discoverUrl, {
+      params: {
+        api_key: this.key,
+        sort_by: category,
+      },
+    });
+  };
+
+  getMovies = (genreId: string, release_year: string, sort: string): any => {
     return this.http.get(this.discoverUrl, {
       params: {
         api_key: this.key,
         with_genres: genreId,
         primary_release_year: release_year,
+        sort_by: sort,
       },
     });
   };

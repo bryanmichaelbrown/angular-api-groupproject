@@ -19,7 +19,9 @@ export class HomeComponent implements OnInit {
     this.route.queryParamMap.subscribe((params) => {
       console.log(params.get('genre'));
       let id = params.get('genre');
-      this.service.getMovies(id).subscribe((response) => {
+      let year = params.get('release_year');
+      let sorted = params.get('sort');
+      this.service.getMovies(id, year, sorted).subscribe((response) => {
         console.log(response.results);
         this.genre = response.results;
       });

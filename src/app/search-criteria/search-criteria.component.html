@@ -1,9 +1,9 @@
 <form class="search-form" #searchForm="ngForm" (ngSubmit)="search(searchForm)">
-  <label for="popularity">Popular?</label>
-  <select class="select" name="popularity" id="popularity" ngModel>
-    <option value="yes">Yes</option>
-    <option value="no">No</option>
+  <label for="sort">Sort by?</label>
+  <select name="sort" id="sort">
+    <option value="sort" ngModel></option>
   </select>
+
   <label for="genre">Genre?</label>
   <select class="select" name="genre" id="genre" ngModel>
     <option *ngFor="let genre of genres" value="{{ genre.id }}">{{

@@ -10,10 +10,12 @@ import { NgForm } from '@angular/forms';
 })
 export class SearchCriteriaComponent implements OnInit {
   genres: any;
+  sorts: any;
   constructor(private router: Router, private service: MovieService) {}
 
   ngOnInit(): void {
     this.getGenres();
+    this.getSortTerms();
   }
 
   //brings the genres to the search component
@@ -24,13 +26,22 @@ export class SearchCriteriaComponent implements OnInit {
     });
   };
 
+  getSortTerms = () => {
+    this.service.getSortTerms().subscribe((response) => {
+      // console.log(response.genres);
+      this.sorts = response.sorts;
+    });
+  };
+
   search = (form: NgForm) => {
     console.log('howdy');
     this.router.navigate(['home'], {
       queryParams: {
         genre: form.value.genre,
         release_year: form.value.year,
+        sorted: form.value.sort,
       },
     });
+    form.reset;
   };
 }
