@@ -25,3 +25,8 @@
 .save-button:hover {
   background: white;
 }
+.details {
+  height: 100px;
+  width: 100px;
+  background-color: white;
+}

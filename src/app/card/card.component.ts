@@ -10,6 +10,7 @@ export class CardComponent implements OnInit {
   @Input() movieRef: any;
   @Output() addEvent = new EventEmitter<void>();
   watchlist: Movie[] = [];
+  showDetails: boolean = true;
 
   constructor() {}
 
@@ -21,4 +22,7 @@ export class CardComponent implements OnInit {
   addMovie = () => {
     this.addEvent.emit();
   };
+  toggleDetails() {
+    this.showDetails = !this.showDetails;
+  }
 }

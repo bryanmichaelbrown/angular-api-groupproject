@@ -63,6 +63,9 @@ export class MovieService {
   myFavorites = () => {
     return this.watchlist;
   };
+  onDelete(index: number) {
+    this.watchlist.splice(index, 1);
+  }
 }
 
 //Testing
