@@ -33,4 +33,7 @@ export class HomeComponent implements OnInit {
   onAdd = (movie: any) => {
     this.service.onAdd(movie);
   };
+  onDelete(movie) {
+    this.service.onDelete(movie);
+  }
 }

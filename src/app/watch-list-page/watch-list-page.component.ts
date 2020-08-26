@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { MovieService } from '../movie.service';
 // import { Movie } from '../interfaces/movie';
 
 @Component({
@@ -8,7 +9,11 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 })
 export class WatchListPageComponent implements OnInit {
   @Input() favRef: any;
+  @Output() deleted = new EventEmitter<void>();
   constructor() {}
 
+  deleteMovie() {
+    this.deleted.emit();
+  }
   ngOnInit(): void {}
 }
