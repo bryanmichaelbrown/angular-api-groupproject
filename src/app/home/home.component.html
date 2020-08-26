@@ -4,6 +4,7 @@
   <app-card
     *ngFor="let movie of movies; index as i"
     [movieRef]="movie"
+    [indexRef]="i"
     (addEvent)="onAdd(movie)"
   >
   </app-card>

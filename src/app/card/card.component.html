@@ -3,11 +3,24 @@
     <p class="card-item">{{ movieRef?.title }}</p>
     <button class="save-button card-item" (click)="addMovie()">+</button>
   </div>
-  <img
-    src="https://image.tmdb.org/t/p/w220_and_h330_face{{
-      movieRef?.poster_path
-    }}"
-    alt="Poster of Movie"
-  />
-  <button class="details">Details</button>
+  <div class="img-container">
+    <img
+      class="img"
+      src="https://image.tmdb.org/t/p/w220_and_h330_face{{
+        movieRef?.poster_path
+      }}"
+      alt="Poster of Movie"
+      (click)="setShowIndex(indexRef)"
+    />
+    <div
+      class="popup"
+      *ngIf="showIndex === indexRef"
+      (click)="setShowIndex(indexRef)"
+    >
+      <div class="info-container">
+        <p>{{ movieRef?.title }}:</p>
+        <p>{{ movieRef?.overview }}</p>
+      </div>
+    </div>
+  </div>
 </div>

@@ -8,9 +8,10 @@ import { Movie } from '../interfaces/movie';
 })
 export class CardComponent implements OnInit {
   @Input() movieRef: any;
+  @Input() indexRef: number;
   @Output() addEvent = new EventEmitter<void>();
   watchlist: Movie[] = [];
-
+  showIndex: number;
   constructor() {}
 
   // onAdd = (movie: Movie) => {
@@ -20,5 +21,13 @@ export class CardComponent implements OnInit {
 
   addMovie = () => {
     this.addEvent.emit();
+  };
+
+  setShowIndex = (index: number) => {
+    if (this.showIndex >= 0) {
+      this.showIndex = -1;
+    } else {
+      this.showIndex = index;
+    }
   };
 }
