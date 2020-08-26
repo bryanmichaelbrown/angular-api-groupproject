@@ -14,6 +14,7 @@
   <app-watch-list-page
     *ngFor="let fav of watchlist; index as i"
     (deleted)="onDelete(i)"
+    [indexRef]="i"
     [favRef]="fav"
   ></app-watch-list-page>
 </ol>

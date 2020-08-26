@@ -3,8 +3,30 @@
     <p class="card-item">{{ favRef?.title }}</p>
     <button class="delete-button card-item" (click)="deleteMovie()">x</button>
   </div>
-  <img
-    src="https://image.tmdb.org/t/p/w220_and_h330_face{{ favRef?.poster_path }}"
-    alt="Poster of Movie"
-  />
+  <div class="img-container">
+    <img
+      src="https://image.tmdb.org/t/p/w220_and_h330_face{{
+        favRef?.poster_path
+      }}"
+      alt="Poster of Movie"
+      (click)="setShowIndex(indexRef)"
+      *ngIf="favRef?.poster_path !== null"
+    />
+    <img
+      src="assets/Missing_img.jpg"
+      alt="Missing Image"
+      (click)="setShowIndex(indexRef)"
+      *ngIf="favRef?.poster_path === null"
+    />
+    <div
+      class="popup-2"
+      *ngIf="showIndex === indexRef"
+      (click)="setShowIndex(indexRef)"
+    >
+      <div class="popup-container">
+        <p class="popup-title">{{ favRef?.title }}:</p>
+        <p>{{ favRef?.overview }}</p>
+      </div>
+    </div>
+  </div>
 </div>

@@ -9,11 +9,22 @@ import { MovieService } from '../movie.service';
 })
 export class WatchListPageComponent implements OnInit {
   @Input() favRef: any;
+  @Input() indexRef: number;
   @Output() deleted = new EventEmitter<void>();
+  showIndex: number;
   constructor() {}
+
+  ngOnInit(): void {}
 
   deleteMovie() {
     this.deleted.emit();
   }
-  ngOnInit(): void {}
+
+  setShowIndex = (index: number) => {
+    if (this.showIndex >= 0) {
+      this.showIndex = -1;
+    } else {
+      this.showIndex = index;
+    }
+  };
 }
