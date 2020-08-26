@@ -8,9 +8,10 @@
   >
   </app-card>
 </ol>
-
-<app-watch-list-page
-  *ngFor="let fav of watchlist; index as i"
-  (deleted)="onDelete(i)"
-  [favRef]="fav"
-></app-watch-list-page>
+<ol class="card-container">
+  <app-watch-list-page
+    *ngFor="let fav of watchlist; index as i"
+    (deleted)="onDelete(i)"
+    [favRef]="fav"
+  ></app-watch-list-page>
+</ol>
