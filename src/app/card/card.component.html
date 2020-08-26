@@ -11,6 +11,13 @@
       }}"
       alt="Poster of Movie"
       (click)="setShowIndex(indexRef)"
+      *ngIf="movieRef?.poster_path !== null"
+    />
+    <img
+      src="assets/Missing_img.jpg"
+      alt="Missing Image"
+      (click)="setShowIndex(indexRef)"
+      *ngIf="movieRef?.poster_path === null"
     />
     <div
       class="popup"
@@ -18,7 +25,7 @@
       (click)="setShowIndex(indexRef)"
     >
       <div class="info-container">
-        <p>{{ movieRef?.title }}:</p>
+        <p class="detail-title">{{ movieRef?.title }}:</p>
         <p>{{ movieRef?.overview }}</p>
       </div>
     </div>

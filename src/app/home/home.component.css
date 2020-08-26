@@ -4,6 +4,14 @@
   margin-left: 35px;
   overflow: scroll;
 }
+.watchlist-title {
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  margin: 20px;
+  padding: 10px;
+  font-size: 40px;
+}
+
 @media screen and (min-width: 768px) {
   .card-container {
     display: flex;
